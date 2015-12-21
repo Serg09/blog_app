@@ -27,6 +27,7 @@ gem 'bootstrap-generators'
 gem 'rspec-rails'
 gem 'guard-bundler'
 gem 'guard-rspec'
+gem 'guard-rubocop'
 gem 'factory_girl_rails'
 gem 'capybara'
 
