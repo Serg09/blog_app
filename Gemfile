@@ -30,6 +30,7 @@ gem 'guard-rspec'
 gem 'guard-rubocop'
 gem 'factory_girl_rails'
 gem 'capybara'
+# gem 'ast', '~> 2.2'
 
 group :production do
   gem 'pg'
