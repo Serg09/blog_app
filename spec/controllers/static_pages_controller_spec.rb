@@ -17,7 +17,7 @@ RSpec.describe StaticPagesController, type: :controller do
     end
   end
 
-  describe "GET #help" do
+  describe "Help page" do
     it "returns http success" do
       get :help
       expect(response).to have_http_status(:success)
@@ -30,7 +30,7 @@ RSpec.describe StaticPagesController, type: :controller do
     end
   end
 
-  describe "GET #about" do
+  describe "About page" do
     it "returns http success" do
       get :about
       expect(response).to have_http_status(:success)
@@ -40,6 +40,19 @@ RSpec.describe StaticPagesController, type: :controller do
       get :about
       title_text = 'About Blog App'
       expect(response.body).to have_title('About Blog App')
+    end
+  end
+
+  describe "Contact page" do
+    it "returns http success" do
+      get :contact
+      expect(response).to have_http_status(:success)
+    end
+
+    it "should have the title 'Home Blog App'" do
+      get :contact
+      title_text = 'Contact Blog App'
+      expect(response.body).to have_title('Contact Blog App')
     end
   end
 end
