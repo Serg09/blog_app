@@ -29,7 +29,8 @@ gem 'guard-bundler'
 gem 'guard-rspec'
 gem 'guard-rubocop'
 gem 'factory_girl_rails'
-gem 'capybara'
+gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+# gem 'ast', '~> 2.2'
 
 group :production do
   gem 'pg'
