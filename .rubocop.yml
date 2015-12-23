@@ -3,3 +3,9 @@ AllCops:
     - "Guardfile"
     - "Gemfile"
     - "homework_tester/**/*"
+    - "test/**/*"
+    - "config/**/*"
+    - "spec/**/*"
+    - "bin/**/*"
+Documentation:
+  Enabled: false
