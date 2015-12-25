@@ -10,10 +10,10 @@ RSpec.describe StaticPagesController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
-    it "should have the title 'Home Blog App'" do
+    it "should have the title 'Blog App'" do
       get :home
       title_text = 'Home Blog App'
-      expect(response.body).to have_title('Home Blog App')
+      expect(response.body).to have_title('Blog App')
     end
   end
 
