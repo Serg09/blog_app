@@ -15,11 +15,12 @@ class User < ActiveRecord::Base
                    format: { with: /\A[a-zA-Z]+\z/, message: "should only contain letters" },
                    presence: true
     name.validates :last_name, length: { minimum: 2, maximum: 50 },
-                   format: { with: /\A[a-zA-Z]+\z/, message: "should only contain letters" }, presence: true
+                   format: { with: /\A[a-zA-Z]+\z/, message: "should only contain letters" },
+                   presence: true
     name.validates :email, length: { maximum: 255 },
                    format: { with: /\A([^@\s]+)@((?:[-A-Z-a-z0-9]+\.)+[A-Za-z]{2,})\z/i},
                    presence: true, uniqueness: { case_sensitive: false }
     has_secure_password
-    name.validates :password, presence: true, length: { minimum: 6 }
+    name.validates :password, presence: true, allow_nil: true, length: { minimum: 6 }
   end
 end
