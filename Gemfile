@@ -32,8 +32,7 @@ gem 'guard-rspec'
 gem 'guard-rubocop'
 gem 'factory_girl_rails'
 gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
-# gem 'ast', '~> 2.2'
-
+gem 'vcr'
 group :production do
   gem 'pg'
   gem 'rails_12factor'

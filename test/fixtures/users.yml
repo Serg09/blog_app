@@ -1,7 +1,13 @@
 one:
-  name: MyString
-  email: MyString
+    first_name: Sergey Skumatov
+    email: sergeyskumatov@aol.com
+    password_digest: <%= User.digest('password') %>
 
 two:
-  name: MyString
-  email: MyString
+  first_name: Sergey
+  email: Sergeyskumatov@test.com
+
+#  michael:
+#    first_name: Sergey Skumatov
+#    email: sergeyskumatov@aol.com
+#    password_digest: <%= User.digest('password') %>

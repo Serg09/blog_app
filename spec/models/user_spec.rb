@@ -18,15 +18,15 @@ RSpec.describe User, type: :model do
 
   feature "User should be valid" do
     scenario "should have valid factory" do
-      FactoryGirl.build(:user, :email => "user@example.com",
-                        :password => "foobar", :password_confirmation => "foobar").should be_valid
+      FactoryGirl.build(:user, :email => "sergeyskumatov@aol.com",
+                        :password => "Password_2016", :password_confirmation => "Password_2016").should be_valid
     end
     end
 
     feature "User should be valid" do
     scenario "should NOT have valid factory" do
-      user = FactoryGirl.create :user, :email => "user@example.com", :password => "foobar",
-                                :password_confirmation => "foobar"
+      user = FactoryGirl.create :user, :email => "sergeyskumatov@aol.com", :password => "Password_2016",
+                                :password_confirmation => "Password_2016"
       if user == ""
         user.should_not be_valid
       else
@@ -36,16 +36,16 @@ RSpec.describe User, type: :model do
     end
 
   it 'password length less than 6 characters is invalid' do
-    user = FactoryGirl.create :user, :email => "user@example.com", :password => "foobar",
-                              :password_confirmation => "foobar"
+    user = FactoryGirl.create :user, :email => "sergeyskumatov@aol.com", :password => "Password_2016",
+                              :password_confirmation => "Password_2016"
     result = user.save
     expect(result).to be(true)
   end
 
   describe "#downcase_email" do
     it "downcases an email before saving" do
-      user = FactoryGirl.create :user, :email => "JBOLTIK@OOLAABOX.COM", :password => "foobar",
-                                                            :password_confirmation => "foobar"
+      user = FactoryGirl.create :user, :email => "JBOLTIK@OOLAABOX.COM", :password => "Password_2016",
+                                                            :password_confirmation => "Password_2016"
       user.email = "JBOLTIK@OOLAABOX.COM"
       expect(user.save).to be true
       expect(user.email).to eq("jboltik@oolaabox.com")

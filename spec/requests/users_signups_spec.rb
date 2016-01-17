@@ -13,16 +13,22 @@ RSpec.describe "UsersSignups", type: :request do
     end
 
 
-    # scenario 'User sign up' do
-    #   get root_path
-    #   click_link 'Sign Up now!'
-    #   fill_in 'user[first_name]', with: 'Sergey'
-    #   fill_in 'user[last_name]', with: 'Skumatov'
-    #   fill_in 'user[email]', with: 'newagent@example.com'
-    #   fill_in 'user[password]', with: 'newpassword'
-    #   fill_in 'user[password_confirmation]', with: 'newpassword'
-    #   click_button 'Create my account'
-    #   expect(page).to have_content "Missing Template"
+    # describe "Sessions", :type => :request do
+    #
+    #   let(:company) { FactoryGirl.create(:company) }
+    #   let(:user) { FactoryGirl.create(:admin, company_id: company.id ) }
+    #
+    #   describe "login page" do
+    #     it "signs me in" do
+    #       visit '/users/sign_in'
+    #       within("#new_user") do
+    #         fill_in 'Email', :with => user.email
+    #         fill_in 'Password', :with => user.password
+    #       end
+    #       click_button 'Sign in'
+    #       expect(page).to have_content 'Agenda'
+    #     end
+    #   end
     # end
 
     describe "GET #index" do
