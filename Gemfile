@@ -31,8 +31,13 @@ gem 'guard-bundler'
 gem 'guard-rspec'
 gem 'guard-rubocop'
 gem 'factory_girl_rails'
-gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+# gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+gem 'capybara'
 gem 'vcr'
+# gem 'will_paginate', '~> 3.1'
+gem 'will_paginate',           '3.0.7'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
@@ -58,6 +63,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'faker'
   gem 'sqlite3'
 end
 
