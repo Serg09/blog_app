@@ -37,6 +37,7 @@ gem 'vcr'
 # gem 'will_paginate', '~> 3.1'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
+gem 'sendgrid-rails'
 
 group :production do
   gem 'pg'
