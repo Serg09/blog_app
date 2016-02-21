@@ -44,7 +44,7 @@ gem 'sendgrid-rails'
 gem 'carrierwave' #,             '0.10.0'
 gem 'mini_magick' #,             '3.8.0'
 gem 'fog' #,                     '1.36.0'
-
+gem 'faker' #,                '1.4.2'
 
 group :production do
   gem 'pg'
@@ -71,7 +71,8 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'faker'
+  # gem 'faker'
+  # gem 'faker', '~> 1.6', '>= 1.6.1'
   gem 'sqlite3'
 end
 
