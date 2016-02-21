@@ -7,10 +7,10 @@ class User < ActiveRecord::Base
 
   with_options if: :first_name do |name|
     name.validates :first_name, length: { minimum: 3, maximum: 50 },
-                   format: { with: /\A[a-zA-Z]+\z/, message: "should only contain letters" },
+                   # format: { with: /\A[a-zA-Z0-9]+\z/, message: "should only contain letters" },
                    presence: true
     name.validates :last_name, length: { minimum: 2, maximum: 50 },
-                   format: { with: /\A[a-zA-Z0-9]+\z/, message: "should only contain letters" },
+                   # format: { with: /\A[a-zA-Z0-9]+\z/, message: "should only contain letters" },
                    presence: true
     name.validates :email, length: { maximum: 255 },
                    format: { with: /\A([^@\s]+)@((?:[A-Za-z0-9]+\.)+[A-Za-z]{2,})\z/i},
