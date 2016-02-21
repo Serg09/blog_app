@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :microposts
+  has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   # before_save { email.downcase! }
   before_save   :downcase_email
@@ -10,14 +10,14 @@ class User < ActiveRecord::Base
                    format: { with: /\A[a-zA-Z]+\z/, message: "should only contain letters" },
                    presence: true
     name.validates :last_name, length: { minimum: 2, maximum: 50 },
-                   format: { with: /\A[a-zA-Z]+\z/, message: "should only contain letters" },
+                   format: { with: /\A[a-zA-Z0-9]+\z/, message: "should only contain letters" },
                    presence: true
     name.validates :email, length: { maximum: 255 },
-                   format: { with: /\A([^@\s]+)@((?:[-A-Z-a-z0-9]+\.)+[A-Za-z]{2,})\z/i},
+                   format: { with: /\A([^@\s]+)@((?:[A-Za-z0-9]+\.)+[A-Za-z]{2,})\z/i},
                    presence: true, uniqueness: { case_sensitive: false }
     has_secure_password
     name.validates :password, presence: true, allow_nil: true, length: { minimum: 6 },
-                   format: { with: /\A^.*(?=.{10,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=_]).*$\z/,
+                   format: { with: /\A^.*(?=.{10,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=\_]).*$\z/,
                    message: "must be at least 6 characters and include one special character,
                             one number, and one Upper and lower case letter."}
   end
@@ -86,6 +86,12 @@ class User < ActiveRecord::Base
   # Returns true if a password reset has expired.
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
+  end
+
+  # Defines a proto-feed.
+  # See "Following users" for the full implementation.
+  def feed
+    Micropost.where("user_id = ?", id)
   end
 
   private
