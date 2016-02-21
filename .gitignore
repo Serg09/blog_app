@@ -15,4 +15,10 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore Spring files.
+/spring/*.pid
 spring/
+
+# Ignore uploaded test images.
+/public/uploads
