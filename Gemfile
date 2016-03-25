@@ -49,6 +49,9 @@ gem 'fog' #,                     '1.36.0'
 gem 'faker' #,                '1.4.2'
 gem 'aws-sdk'
 
+# Access an IRB console on exception pages or by using <%= console %> in views
+gem 'web-console', group: :development
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
@@ -64,8 +67,6 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-# Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
   gem 'sqlite3'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
