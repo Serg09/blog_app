@@ -14,5 +14,8 @@
  *= require_self
  */
 
+/*
+default colors for navbar
+*/
 .navbar { min-height: 38px; background-color: #002cbf; }
 

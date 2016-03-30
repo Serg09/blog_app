@@ -62,11 +62,11 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 2em;
   color: #ff005b;
   text-transform: uppercase;
-  letter-spacing: 0px;
-  padding-top: 13px;
+  letter-spacing: -1px;
+  padding-top: 15px;
   font-weight: bold;
   &:hover {
     color: #fff800;
